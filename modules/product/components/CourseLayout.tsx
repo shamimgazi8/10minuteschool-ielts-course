@@ -14,8 +14,8 @@ const CourseLayout = ({ sections }: Props) => {
   if (!featureSection || !featureSection.values?.length) return null;
 
   return (
-    <SectionLayoutWrapper title={featureSection.name} className=" md:text-[20px]">
-        <div className="mb-16 grid grid-cols-1 gap-4 rounded-md border bg-[#111827] p-6 md:grid-cols-2 md:gap-8">
+    <SectionLayoutWrapper title={featureSection.name} className=" md:text-[20px] mt-4">
+        <div id="features" className="mb-16 grid grid-cols-1 gap-4 rounded-md border bg-[#111827] p-6 md:grid-cols-2 md:gap-8">
 
       
       {featureSection.values.map((item) => (

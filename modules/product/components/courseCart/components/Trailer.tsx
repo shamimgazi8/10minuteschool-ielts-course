@@ -75,7 +75,7 @@ const MediaCarousel = ({ media }: Props) => {
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 flex items-center justify-center bg-black/40 bg-opacity-40">
-              <div className="rounded-full bg-white bg-opacity-80 p-4 z-50">
+              <div className="rounded-full bg-white bg-opacity-80 p-4 z-20">
                 <FaPlay className="text-green-500 text-xl" />
               </div>
                <div className="rounded-full bg-white/20 bg-opacity-80 p-[30px] absolute ">
@@ -101,8 +101,8 @@ const MediaCarousel = ({ media }: Props) => {
       </button>
 
       {/* Thumbnails */}
-      <div className="p-4 overflow-hidden">
-        <div className="flex gap-2 overflow-x-auto hide-scrollbar scroll-smooth">
+      <div className="p-4 overflow-hidden z-50">
+        <div className="flex gap-2 overflow-x-auto hide-scrollbar scroll-smooth z-50">
           {media.map((item, index) => (
             <button
               key={index}

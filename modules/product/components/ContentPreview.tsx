@@ -26,21 +26,21 @@ export default function ContentPreview({ sections }: Props) {
 
   return (
     <SectionLayoutWrapper>
-      <div className="mb-6">
+      <div id="content_preview" className="mb-6">
         <div className="flex justify-between w-full">
           <h2 className="mb-2 text-xl font-semibold md:mb-4 text-[#111827] select-none">
             কন্টেন্ট প্রিভিউ
           </h2>
         </div>
 
-        <div className="relative rounded-md md:border border-gray-300 md:px-5">
+        <div className="relative rounded-md md:border border-gray-800 md:px-5">
           {visibleSections.map((section, idx) => {
             const isOpen = idx === openIndex;
 
             return (
               <div
                 key={idx}
-                className="border-b border-dashed border-gray-300 last:border-0 select-none"
+                className="border-b border-dashed border-gray-800 last:border-0 select-none"
               >
                 <button
                   type="button"
@@ -121,7 +121,7 @@ export default function ContentPreview({ sections }: Props) {
         {sections.length > 3 && (
           <div className="flex justify-center translate-y-[-15px] select-none ">
             <button
-              className="flex items-center gap-2 rounded-full bg-white px-4 py-1 text-sm text-gray-600 border border-gray-300 shadow-md hover:bg-gray-100 transition"
+              className="flex items-center gap-2 rounded-full bg-white px-4 py-1 text-sm text-gray-600   shadow-md hover:bg-gray-100 transition"
               onClick={() => setShowAll((prev) => !prev)}
             >
               {showAll ? "কম দেখুন" : "সকল কন্টেন্ট"}

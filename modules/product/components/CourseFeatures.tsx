@@ -1,7 +1,7 @@
 import SectionLayoutWrapper from "@/modules/@common/SectionLayoutWrapper";
 import React from "react";
 
-type FeatureValue = {
+export type FeatureValue = {
   checklist: string[];
   file_type: string;
   file_url: string;
@@ -9,6 +9,7 @@ type FeatureValue = {
   title: string;
   video_thumbnail?: string;
 };
+
 
 type FeatureExplanationsProps = {
   name: string;
@@ -75,9 +76,9 @@ const CourseFeatures: React.FC<{ data: FeatureExplanationsProps }> = ({
   return (
     <SectionLayoutWrapper>
 
-    <div id="feature_explanations" className="px-5 md:px-0 max-w-7xl mx-auto">
-      <div className="flex flex-col gap-6 mb-12">
-        <h2 className="text-xl md:text-2xl font-semibold leading-[30px] text-black">
+    <div id="feature_explanations" className="px-5 md:px-0 max-w-7xl mx-auto mt-4">
+      <div className="flex flex-col gap-4 mb-12">
+        <h2 className="text-xl md:text-xl font-semibold leading-[30px] text-black">
           {data.name}
         </h2>
 

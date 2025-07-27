@@ -27,7 +27,7 @@ export default function AboutCourseContent({ section }: Props) {
     <SectionLayoutWrapper>
       <div className="mb-6">
         <div className="flex justify-between w-full">
-          <h2 className="mb-2 text-xl font-semibold md:mb-4 text-[#111827] select-none">
+          <h2 className="mb-2 text-2xl font-semibold md:mb-4 text-[#111827] select-none mt-4">
          {section?.name}
           </h2>
         </div>

@@ -4,16 +4,13 @@ import CourseLayout from "./components/CourseLayout";
 import Instructors from "./components/Instructors";
 import GroupJoinEngagement from "./components/GroupJoin";
 import Pointers from "./components/Pointers";
-import ContentPreview from "./components/ContentPreview";
-
-// Import JSON data
-import contentPreviewData from "@/data/contentPreviewData.json";
 import AboutCourseContent from "./components/CourseDetails";
 import CourseFeatures from "./components/CourseFeatures";
 import FreeItemSection from "./components/FreeItemSection";
 import Requirements from "./components/Requirements";
 import HowToPay from "./components/HowtoPay";
-
+import StickyTabs from "../@common/StickyTabs";
+import { toFeatureExplanations, transformAbout, transformPointers } from "@/utils/transformers";
 
 export default async function ProductPage({
   lang = "en",
@@ -38,36 +35,24 @@ export default async function ProductPage({
         ctaText={product?.cta_text}
         checklist={product?.checklist || []}
       />
-
+        <div className=" w-[40%]  ml-[355px] sticky top-[65px] z-20 bg-white hidden md:block">
+            <StickyTabs />
+        </div>
       <Instructors sections={product?.sections || []} />
       <CourseLayout sections={product?.sections || []} />
       <GroupJoinEngagement />
 
-      <Pointers
-        title={pointersData?.name ?? ""}
-        points={
-          (pointersData?.values || []).map((v: any) => ({
-            id: v.id,
-            text: v.text ?? v.value ?? "",
-          }))
-        }
-      />
+        <Pointers
+          title={pointersData?.name ?? ""}
+          points={transformPointers(pointersData)}
+        />
 
-      <ContentPreview sections={contentPreviewData} />
-      <AboutCourseContent
-        section={
-          aboutData
-            ? {
-                ...aboutData,
-                values: (aboutData.values || []).map((v: any) => ({
-                  ...v,
-                  description: v.description ?? "",
-                })),
-              }
-            : undefined
-        }
-      />
-        <CourseFeatures data={courseFeatures || []} />
+        <AboutCourseContent section={transformAbout(aboutData)} />
+
+        <CourseFeatures data={toFeatureExplanations(courseFeatures)} />
+
+
+
         <FreeItemSection />
         <Requirements />
         <HowToPay />

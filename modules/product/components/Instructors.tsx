@@ -15,12 +15,12 @@ const Instructors = ({ sections }: Props) => {
   if (!instructorSection || !instructorSection.values?.length) return null;
 
   return (
-    <SectionLayoutWrapper title={instructorSection.name} className="">
-      <div className=" bg-white">
+    <SectionLayoutWrapper title={instructorSection.name} className=" select-none mt-4">
+      <div id="instructors" className=" bg-white">
         {instructorSection.values.map((instructor, index) => (
           <div
             key={index}
-            className="flex items-center md:rounded-md md:border border-gray-300 md:p-5 mb-4"
+            className="flex items-center md:rounded-md md:border border-gray-300 md:p-5 mb-4 select-none"
           >
             {/* Instructor Image */}
             <div>
