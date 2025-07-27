@@ -19,10 +19,10 @@ const Requirements = () => {
             <h2 className="mb-4 text-xl font-semibold md:text-2xl">
               ক্লাস করার জন্য প্রয়োজন হবে
             </h2>
-            <div className="py-2 rounded-md md:border md:p-6">
+            <div className="py-2 rounded-md md:border border-gray-300 md:p-6">
               <ul>
                 {requirements.map((item, idx) => (
-                    <li key={idx} className="flex items-start gap-2 mb-2 last:mb-0">
+                    <li key={idx} className="flex items-start gap-2 mb-2 last:mb-0 text-[16px] text-[#111827]">
                     <BiCheck className="text-[#6294F8]" size={24} />
                     <h3>{item}</h3>
                   </li>

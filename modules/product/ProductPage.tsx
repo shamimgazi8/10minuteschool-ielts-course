@@ -11,6 +11,12 @@ import Requirements from "./components/Requirements";
 import HowToPay from "./components/HowtoPay";
 import StickyTabs from "../@common/StickyTabs";
 import { toFeatureExplanations, transformAbout, transformPointers } from "@/utils/transformers";
+import ContentPreview from "./components/ContentPreview";
+import contentPreviewData from "@/data/contentPreviewData.json";
+import CallSupport from "./components/CallSupport";
+import ChatButton from "./components/Chatbutton";
+import WhatsAppButton from "./components/Wpbutton";
+
 
 export default async function ProductPage({
   lang = "en",
@@ -46,6 +52,7 @@ export default async function ProductPage({
           title={pointersData?.name ?? ""}
           points={transformPointers(pointersData)}
         />
+        <ContentPreview  sections={contentPreviewData} />
 
         <AboutCourseContent section={transformAbout(aboutData)} />
 
@@ -56,6 +63,9 @@ export default async function ProductPage({
         <FreeItemSection />
         <Requirements />
         <HowToPay />
+         <CallSupport />
+         <ChatButton />
+         <WhatsAppButton />
     </div>
   );
 }

@@ -11,7 +11,7 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="bg-white border-t py-10 px-6 text-sm text-gray-700">
+    <footer className="bg-white  py-10 px-6 text-sm text-gray-700">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
         {/* App Info */}
         <div className="space-y-4">
@@ -54,8 +54,8 @@ export default function Footer() {
 
         {/* Company */}
         <div>
-          <h4 className="font-semibold mb-3">কোম্পানি</h4>
-          <ul className="space-y-2">
+          <h4 className="font-semibold mb-3 text-[20px] text-black ">কোম্পানি</h4>
+          <ul className="space-y-2 text-[16px]">
             <li>ক্যারিয়ার / নিয়োগ বিজ্ঞপ্তি</li>
             <li>শিক্ষক হিসাবে যোগ দিন</li>
             <li>অ্যাফিলিয়েট হিসাবে যোগ দিন</li>
@@ -67,8 +67,8 @@ export default function Footer() {
 
         {/* Others */}
         <div>
-          <h4 className="font-semibold mb-3">অন্যান্য</h4>
-          <ul className="space-y-2">
+          <h4 className="font-semibold mb-3 text-[20px] text-black">অন্যান্য</h4>
+          <ul className="space-y-2 text-[16px]">
             <li>ব্লগ</li>
             <li>বুক স্টোর</li>
             <li>ফ্রি নোটস ও গাইড</li>
@@ -80,8 +80,8 @@ export default function Footer() {
 
         {/* Contact */}
         <div>
-          <h4 className="font-semibold mb-3">আমাদের যোগাযোগ মাধ্যম</h4>
-          <ul className="space-y-2">
+          <h4 className="font-semibold mb-3 text-[20px] text-black">আমাদের যোগাযোগ মাধ্যম</h4>
+          <ul className="space-y-2 text-[16px]">
             <li>
               কল করুন: <span className="text-green-600">16910</span> (24x7)
             </li>

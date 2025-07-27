@@ -5,7 +5,7 @@ import PriceTag from "./components/PriceTag";
 
 const CourseCart = ({ media, ctaText, checklist }: any) => {
   return (
-    <div className="mt-10 w-full md:max-w-[330px] lg:max-w-[400px] order-2 bg-white absolute right-0 md:top-[50px] md:absolute border border-gray-300">
+    <div className="mt-8 w-full md:max-w-[330px] lg:max-w-[400px] order-2 bg-white absolute right-0 md:top-[50px] md:absolute border border-gray-300">
       {/* Not sticky wrapper anymore */}
       <MediaCarousel media={media} />
       

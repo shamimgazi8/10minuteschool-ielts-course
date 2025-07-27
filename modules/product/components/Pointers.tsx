@@ -21,7 +21,7 @@ const Pointers = ({ title, points }: Props) => {
 
     <div id="pointers" className="mb-6 md:mb-10 relative bg-[#E5E7EB] py-2 md:bg-white md:py-0">
       <div className="pt-6 pb-6 bg-white md:pb-0 md:pt-0">
-        <h2 className="mb-4 text-xl  md:text-2xl">{title}</h2>
+        <h2 className="mb-4 text-xl  md:text-2xl font-semibold">{title}</h2>
 
         <div className="rounded-md md:border border-gray-300">
           <div className="pt-2 md:p-6">

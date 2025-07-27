@@ -33,14 +33,14 @@ export default function ContentPreview({ sections }: Props) {
           </h2>
         </div>
 
-        <div className="relative rounded-md md:border border-gray-800 md:px-5">
+        <div className="relative rounded-md md:border border-gray-300 md:px-5">
           {visibleSections.map((section, idx) => {
             const isOpen = idx === openIndex;
 
             return (
               <div
                 key={idx}
-                className="border-b border-dashed border-gray-800 last:border-0 select-none"
+                className="border-b border-dashed border-gray-300 last:border-0 select-none"
               >
                 <button
                   type="button"

@@ -16,8 +16,8 @@ const HowToPay = () => {
         <h2 className="mb-4 text-xl font-semibold md:text-2xl">
           যেভাবে পেমেন্ট করবেন
         </h2>
-        <div className="rounded-md md:border md:p-4 xs:py-2">
-          <p>
+        <div className="rounded-md md:border border-gray-300 md:p-4 xs:py-2">
+          <p className=" text-[16px] text-[#111827]">
             কীভাবে পেমেন্ট করবেন তা বিস্তারিত জানতে{" "}
             <span
               role="button"
