@@ -1,0 +1,51 @@
+{
+  "logo": {
+    "src": "/logo.png",
+    "alt": "10 Minute School"
+  },
+  "searchPlaceholder": "স্কিল কোর্স, কিশোর স্কুল প্রোগ্রাম সার্চ করুন...",
+  "menus": [
+    {
+      "label": "ক্লাস ৬-১২",
+      "hasDropdown": true,
+      "items": [
+        "ক্লাস ৬",
+        "ক্লাস ৭",
+        "ক্লাস ৮",
+        "ক্লাস ৯",
+        "ক্লাস ১০",
+        "ক্লাস ১১-১২"
+      ]
+    },
+    {
+      "label": "ভর্তি পরীক্ষা",
+      "hasDropdown": true,
+      "items": ["মেডিকেল", "ইঞ্জিনিয়ারিং", "বিশ্ববিদ্যালয়", "ব্যাংক জব"]
+    },
+    {
+      "label": "অনলাইন ব্যাচ",
+      "hasDropdown": true,
+      "items": ["SSC 2024", "HSC 2025", "Foundation Batch"]
+    },
+    {
+      "label": "ইংলিশ কোর্স",
+      "hasDropdown": true,
+      "items": ["IELTS", "Spoken English", "Grammar", "English for Job"]
+    },
+    {
+      "label": "আরো",
+      "hasDropdown": true,
+      "items": ["স্কিল ডেভেলপমেন্ট", "পিএসসি", "জব প্রিপারেশন", "লাইভ ক্লাস"]
+    }
+  ],
+  "languageSwitcher": {
+    "label": "EN"
+  },
+  "call": {
+    "label": "16910",
+    "icon": true
+  },
+  "login": {
+    "label": "লগ-ইন"
+  }
+}

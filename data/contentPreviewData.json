@@ -1,0 +1,99 @@
+[
+  {
+    "title": "Introduction Section",
+    "videos": [
+      {
+        "id": "v1",
+        "title": "Welcome to the course",
+        "isFree": true,
+        "watched": false
+      },
+      {
+        "id": "v2",
+        "title": "Course Overview",
+        "isFree": false,
+        "watched": true
+      }
+    ]
+  },
+  {
+    "title": "Getting Started",
+    "videos": [
+      {
+        "id": "v3",
+        "title": "Installing Tools",
+        "isFree": true,
+        "watched": false
+      },
+      {
+        "id": "v4",
+        "title": "Setting Up the Environment",
+        "isFree": false,
+        "watched": false
+      },
+      {
+        "id": "v5",
+        "title": "First Project Walkthrough",
+        "isFree": true,
+        "watched": true
+      }
+    ]
+  },
+  {
+    "title": "Advanced Topics",
+    "videos": [
+      {
+        "id": "v6",
+        "title": "Deep Dive into Concepts",
+        "isFree": false,
+        "watched": false
+      },
+      {
+        "id": "v7",
+        "title": "Performance Optimization",
+        "isFree": false,
+        "watched": false
+      }
+    ]
+  },
+  {
+    "title": "Real-world Project",
+    "videos": [
+      {
+        "id": "v8",
+        "title": "Planning and Wireframing",
+        "isFree": true,
+        "watched": true
+      },
+      {
+        "id": "v9",
+        "title": "Implementing Features",
+        "isFree": false,
+        "watched": false
+      },
+      {
+        "id": "v10",
+        "title": "Testing and Debugging",
+        "isFree": false,
+        "watched": true
+      }
+    ]
+  },
+  {
+    "title": "Wrap Up",
+    "videos": [
+      {
+        "id": "v11",
+        "title": "Course Summary",
+        "isFree": true,
+        "watched": true
+      },
+      {
+        "id": "v12",
+        "title": "Next Steps",
+        "isFree": false,
+        "watched": false
+      }
+    ]
+  }
+]
