@@ -131,7 +131,7 @@ const CourseCart = ({ media, ctaText, checklist }: any) => {
               <span className="line-through text-gray-500 text-base">৳{1000}</span>
               <div className="ml-2">
                 <div className="bg-[#f97b53] text-white text-sm px-2 py-1 rounded-r-[4px] rounded-l-[2px] flex items-center gap-1 relative">
-                  <div className="absolute -left-2 w-3 h-3 bg-[#f97b53] rotate-45" />
+                  <div className="absolute -left-2 w-5 h-5 bg-[#f97b53] rotate-45" />
                   <span className="ml-2">{0} টা ছাড়</span>
                 </div>
               </div>
