@@ -41,8 +41,10 @@ export default async function ProductPage({
         ctaText={product?.cta_text}
         checklist={product?.checklist || []}
       />
-        <div className=" w-[40%]  ml-[355px] sticky top-[65px] z-20 bg-white hidden md:block">
+        <div className=" container mx-auto px-4 py-8  sticky top-[65px] z-20 hidden md:block">
+          <div className="order-2 flex-1 md:order-1 md:max-w-[calc(100%_-_348px)] lg:max-w-[calc(100%_-_448px)] bg-white">
             <StickyTabs />
+          </div>
         </div>
       <Instructors sections={product?.sections || []} />
       <CourseLayout sections={product?.sections || []} />

@@ -13,6 +13,13 @@ const CourseCart = ({ media, ctaText, checklist }: any) => {
   const [isStickyVisible, setIsStickyVisible] = useState(false);
   const [isFooterVisible, setIsFooterVisible] = useState(false);
 
+  // State to hold dynamic horizontal position (right) and fixed top for sticky cart
+  const [stickyPosition, setStickyPosition] = useState<{ top: number; right: number }>({
+    top: 112, // fixed top offset to keep sticky cart visible on scroll
+    right: 0,
+  });
+
+  // IntersectionObserver for original cart visibility
   useEffect(() => {
     const cartObserver = new IntersectionObserver(
       ([entry]) => {
@@ -36,8 +43,8 @@ const CourseCart = ({ media, ctaText, checklist }: any) => {
     };
   }, []);
 
+  // IntersectionObserver for footer visibility
   useEffect(() => {
-    // Try to find footer only once
     footerRef.current = document.querySelector("footer");
 
     if (!footerRef.current) return;
@@ -61,6 +68,31 @@ const CourseCart = ({ media, ctaText, checklist }: any) => {
     };
   }, []);
 
+  // Update sticky cart horizontal position (right) on scroll and resize
+  useEffect(() => {
+    function updateStickyPosition() {
+      if (!cartRef.current) return;
+
+      const rect = cartRef.current.getBoundingClientRect();
+
+      // Calculate 'right' distance relative to viewport (window.innerWidth - right edge of original cart)
+      const right = window.innerWidth - rect.right;
+
+      // top is fixed (112px) to keep sticky cart visible at a constant vertical position
+      setStickyPosition({ top: 112, right });
+    }
+
+    window.addEventListener("scroll", updateStickyPosition);
+    window.addEventListener("resize", updateStickyPosition);
+
+    updateStickyPosition(); // initial call
+
+    return () => {
+      window.removeEventListener("scroll", updateStickyPosition);
+      window.removeEventListener("resize", updateStickyPosition);
+    };
+  }, []);
+
   const shouldShowSticky = isStickyVisible && !isFooterVisible;
 
   return (
@@ -76,6 +108,7 @@ const CourseCart = ({ media, ctaText, checklist }: any) => {
           {ctaText && <CTAButton data={ctaText} />}
           <Checklist checklist={checklist} />
         </div>
+        
       </div>
 
       {/* Animated Fixed Cart */}
@@ -87,7 +120,11 @@ const CourseCart = ({ media, ctaText, checklist }: any) => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="fixed right-[380px] top-[112px] z-50 w-[90%] max-w-sm bg-white shadow-xl border border-gray-200 p-4"
+            className="fixed z-50 w-[90%] max-w-sm bg-white shadow-xl border border-gray-200 p-4"
+            style={{
+              top: stickyPosition.top,
+              right: stickyPosition.right,
+            }}
           >
             <div className="flex items-center space-x-2 pl-4 pr-4 pt-4">
               <span className="text-xl font-semibold text-black">৳{1000}</span>
