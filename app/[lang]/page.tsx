@@ -1,24 +1,25 @@
-// app/product/ielts-course/page.tsx
 import { Metadata } from "next";
 import { getProductData } from "@/lib/getProductData";
 import ProductPage from "@/modules/product/ProductPage";
 import { SEOData } from "@/types/product";
 
-interface PageProps {
-  params: { lang: string };
-}
+// Now params is a Promise that you must await
+type Params = Promise<{ lang: string }>;
 
-
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const lang = params.lang === "bn" ? "bn" : "en"; // fallback to en
+export async function generateMetadata({
+  params,
+}: {
+  params: Params;
+}): Promise<Metadata> {
+  const { lang: rawLang } = await params;
+  const lang = rawLang === "bn" ? "bn" : "en";
   const { data: product } = await getProductData(lang);
   const seo: SEOData | undefined = product?.seo;
 
   if (!seo) return {};
 
-  const getMetaContent = (key: string): string | undefined => {
-    return seo.defaultMeta.find((meta) => meta.value === key)?.content;
-  };
+  const getMetaContent = (key: string): string | undefined =>
+    seo.defaultMeta.find((meta) => meta.value === key)?.content;
 
   return {
     title: seo.title,
@@ -47,8 +48,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-export default async function Page({ params }: PageProps) {
-  const lang = params.lang === "bn" ? "bn" : "en"; 
+export default async function Page({
+  params,
+}: {
+  params: Params;
+}) {
+  const { lang: rawLang } = await params;
+  const lang = rawLang === "bn" ? "en" : "bn";
 
   return (
     <main>
